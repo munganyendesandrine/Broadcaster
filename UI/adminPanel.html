@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <title>Broadcaster Dashboard</title>
+        <link rel="shortcut icon" href="https://image.shutterstock.com/image-vector/symbol-sign-stop-corruption-red-260nw-1027946191.jpg" type="image/x-icon"/>
+    </head>
+    <body>
+        <style> 
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            html,body {
+                font-family: 'Open Sans';
+                height: 100%;
+            }
+            a {
+                text-decoration: none;
+            }
+            div#header {
+                width: 100%;
+                height: 8%;
+                background-color: #0C0C0D; 
+                margin: 0 auto;
+            }
+            .logo{
+                float: left;
+                margin-top: .2ex; 
+                margin-left: 10px;
+            }
+            .logo a {
+                font-size: 1.6em;
+                color: #fff; 
+            }
+            .logo a span {
+                font-weight: 300;
+            }
+            div#container {
+                height: 92%;
+                width: 100%;
+                margin: 0 auto;
+            }
+            .sidebar {
+                width: 250px;
+                background:#8C0808;
+                float: left; 
+            }
+            ul#nav{}
+            ul#nav li {
+                list-style: none;
+                height:80px;
+                /*background-image: url("../images/success.png");*/
+            }
+            ul#nav li span{
+                position:relative;
+            }
+            ul#nav li span img {
+                float: left;
+                display: block;
+                margin-left: 1px;
+                margin-top: 2px;
+            }
+            ul#nav li a {
+                color: #ccc;
+                display: block;
+                padding: 10px;
+                font-size: 1.8em;
+                width: 75%;
+                float: right;
+                border-bottom: 1px solid #444;
+                -webkit-transition: all 0.2s ease;  
+                -moz-transition: all 0.2s ease;
+                -ms-transition: all 0.2s ease;
+                -o-transition: all 0.2s ease;
+                transition: all 0.2s ease;
+            }
+            ul#nav li a:hover {
+                background: #030303;
+                color: #fff;
+            }
+            ul#nav li a.selected{
+                /*background: #030303;*/
+                color:#fff;
+            }
+            .content {
+                width: auto;
+                height: 100%;
+                /*background: #95a5a6;*/
+                background: lightgray;
+                margin-left: 250px;
+                padding: 15px;
+            }
+            .content p {
+                color: #424242;
+                font-size: 0.8em;
+            }
+            .flexible{
+                display: flex; width: 100%; 
+                justify-content:space-between;
+
+            }
+            div#box {
+                margin-top: 15px; display: flex;
+            }
+            div#box .box-top {
+                color: #fff;
+                text-shadow: 0 1px #000;
+                background: black;
+                padding: 5px;
+                padding-left: 15px;
+                font-weight: 300;
+            } 
+            div#box #box-panel1, div#box #box-panel2, div#box #box-panel3{
+                padding: 15px;
+                background: #fff;
+                color: #333;
+            }
+            div#box4 .all {
+                color: #fff;
+                text-shadow: 0 1px #000;
+                background: black;
+                padding: 5px;
+                padding-left: 15px;
+                font-weight: 300;
+            }
+            #usersDIV{display: none;}
+            #redflagsDIV{display: none;}
+            #interventionsDIV{display: none;}
+            @media only screen and (max-width: 480px) {
+                a.mobile {
+                    display: block;
+                    color: #fff;
+                    background: #000;
+                    text-align: center;
+                    padding: 7px; 
+                    cursor: pointer;
+                }
+                a.mobile:active{
+                    background: #474747;
+                }
+                .sidebar {
+                    width: 100%;
+                    display: none;
+                    height: auto;
+                }
+                .content {
+                    margin-left: 0;
+                }
+            }
+            @media only screen and (min-width: 480px) {
+                .sidebar {
+                    height: 92%;
+                    left: 0;
+                    display: block;
+                    position: absolute;
+                }
+                a.mobile {
+                    display: none;
+                }
+            }
+            #add{float: right; margin-right: 2px;}
+            h1{text-align: center;}
+            #dataTable {
+                font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            #dataTable td, #dataTable th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #dataTable tr:nth-child(odd){background-color: #f2f2f2;}
+
+            #dataTable tr:nth-child(even){background-color: #595959;}
+
+            #dataTable tr:hover {background-color: #ddd;}
+
+            #dataTable th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: center;
+                background-color: #A60303;
+                color: white;
+            }      
+        </style>
+        <script>
+            function usersDIV() {
+                document.getElementById("usersDIV").style.display = "block";
+                document.getElementById("redflagsDIV").style.display = "none";
+                document.getElementById("interventionsDIV").style.display = "none";
+            }
+            function redflagsDIV() {
+                document.getElementById("redflagsDIV").style.display = "block";
+                document.getElementById("usersDIV").style.display = "none";
+                document.getElementById("interventionsDIV").style.display = "none";
+            }
+            function interventionsDIV() {
+                document.getElementById("interventionsDIV").style.display = "block";
+                document.getElementById("redflagsDIV").style.display = "none";
+                document.getElementById("usersDIV").style.display = "none";
+            }
+
+            function disableOpt(){
+                // document.getElementById("selectid").disabled=true;
+            }
+        </script>
+
+        <div id="header">
+            <div class="logo">
+                <a href="#">BROADCASTER</a>
+            </div>
+        </div>
+        <a class="mobile">MENU</a>
+        <div id="container">
+            <div class="sidebar">
+                <ul id="nav">
+                    <li>
+                        <span>
+                            <img src="https://static.thenounproject.com/png/9484-200.png" width="55" height="55"/>
+                        </span>
+                        <a class="selected" href="#">Dashboard</a>
+                    </li>
+                    <li>
+                        <span>
+                            <img src="https://paetep.net/wp-content/uploads/multiple-user-icon-01.png" width="60" height="65"/>
+                        </span>
+                        <a onclick="usersDIV()">Users</a>
+                    </li>
+                    <li>
+                        <span>
+                            <img src="https://icon-library.net/images/red-flag-icon/red-flag-icon-7.jpg" width="60" height="80"/>
+                        </span>
+                        <a onclick="redflagsDIV()">Red-Flag Records</a>
+                    </li>
+                    <li> 
+                        <span>
+                            <br/>
+                            <br/>
+                            <img src="http://iconsetc.com/icons-watermarks/simple-ios-blue-gradient/iconathon/iconathon_flash-flood-basin/iconathon_flash-flood-basin_simple-ios-blue-gradient_512x512.png" width="60" height="65"/>
+                        </span>
+                        <a onclick="interventionsDIV()">Intervention Records</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="content">
+                <div id="usersDIV">
+                    <h1> Users</h1>
+                </div>
+                <div id="redflagsDIV">
+                    <h1> Red-flag Records List And Status </h1>
+                    <div class="flexible">
+                        <div id="box">
+                            <div class="box-top">Under Investigation</div>
+                            <div id="box-panel1"> </div>
+                        </div>
+                        <div id="box">
+                            <div class="box-top">Resolved</div>
+                            <div id="box-panel2"></div>
+                        </div>
+                        <div id="box">
+                            <div class="box-top">Rejected</div>
+                            <div id="box-panel3"> </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div id="box4">
+                        <div class="all">All Red-flag Records For All Users</div>
+                        <select>
+                            <option>Select user id</option>
+                        </select>
+                        <table id="dataTable"> 
+                            <tr><!--th Checkbox-->
+                                <th>RF_ID</th>
+                                <th>RF_Title</th>
+                                <th>RF_Description</th>
+                                <th>RF_Image</th>
+                                <th>RF_Video</th>
+                                <th>User Location</th>
+                                <th>Creation Time</th>
+                                <th>Status</th>
+                            </tr>
+                            <tr>
+                                <!--td //input(type="checkbox" name="chk")-->
+                                <td>1</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>26/11/2019  06:55:31</td>
+                                <td> 
+                                    <form action="/status" method="post">
+                                        <select id="selectid" name="selectid" onchange="this.form.submit(); disableOpt();">
+                                            <option value="draft" selected="selected">Draft</option>
+                                            <option value="underInvestigation">Under Investigation</option>
+                                            <option value="resolved">Resolved</option>
+                                            <option value="rejected">Rejected</option>
+                                        </select>
+                                        <noscript>
+                                            <input type="submit" value="Submit"/>
+                                        </noscript>
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr>
+                                <!--td //input(type="checkbox" name="chk")-->
+                                <td>2</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>26/11/2019  06:55:41</td>
+                                <td> 
+                                    <form action="/status" method="post">
+                                        <select id="selectid" name="selectid" onchange="this.form.submit(); disableOpt();">
+                                            <option value="draft" selected="selected">Draft</option>
+                                            <option value="underInvestigation">Under Investigation</option>
+                                            <option value="resolved">Resolved</option>
+                                            <option value="rejected">Rejected</option>
+                                        </select>
+                                        <noscript>
+                                            <input type="submit" value="Submit"/>
+                                        </noscript>
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr>
+                                <!--td //input(type="checkbox" name="chk")-->
+                                <td>3</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>26/11/2019  06:55:47</td>
+                                <td> 
+                                    <form action="/status" method="post">
+                                        <select id="selectid" name="selectid" onchange="this.form.submit(); disableOpt();">
+                                            <option value="draft" selected="selected">Draft</option>
+                                            <option value="underInvestigation">Under Investigation</option>
+                                            <option value="resolved">Resolved</option>
+                                            <option value="rejected">Rejected</option>
+                                        </select>
+                                        <noscript>
+                                            <input type="submit" value="Submit"/>
+                                        </noscript>
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr>
+                                <!--td //input(type="checkbox" name="chk")-->
+                                <td>4</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>26/11/2019  06:55:51</td>
+                                <td> 
+                                    <form action="/status" method="post">
+                                        <select id="selectid" name="selectid" onchange="this.form.submit(); disableOpt();">
+                                            <option value="draft" selected="selected">Draft</option>
+                                            <option value="underInvestigation">Under Investigation</option>
+                                            <option value="resolved">Resolved</option>
+                                            <option value="rejected">Rejected</option>
+                                        </select>
+                                        <noscript>
+                                            <input type="submit" value="Submit"/>
+                                        </noscript>
+                                    </form>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="interventionsDIV">
+                                
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
