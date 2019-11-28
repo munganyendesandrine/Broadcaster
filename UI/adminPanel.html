@@ -53,7 +53,6 @@
             ul#nav li {
                 list-style: none;
                 height:80px;
-                /*background-image: url("../images/success.png");*/
             }
             ul#nav li span{
                 position:relative;
@@ -83,13 +82,11 @@
                 color: #fff;
             }
             ul#nav li a.selected{
-                /*background: #030303;*/
                 color:#fff;
             }
             .content {
                 width: auto;
                 height: 100%;
-                /*background: #95a5a6;*/
                 background: lightgray;
                 margin-left: 250px;
                 padding: 15px;
@@ -297,9 +294,9 @@
                                 <td> 
                                     <form action="/status" method="post">
                                         <select id="selectid" name="selectid" onchange="this.form.submit(); disableOpt();">
-                                            <option value="draft" selected="selected">Draft</option>
+                                            <option value="draft">Draft</option>
                                             <option value="underInvestigation">Under Investigation</option>
-                                            <option value="resolved">Resolved</option>
+                                            <option value="resolved" selected="selected">Resolved</option>
                                             <option value="rejected">Rejected</option>
                                         </select>
                                         <noscript>
@@ -320,9 +317,9 @@
                                 <td> 
                                     <form action="/status" method="post">
                                         <select id="selectid" name="selectid" onchange="this.form.submit(); disableOpt();">
-                                            <option value="draft" selected="selected">Draft</option>
+                                            <option value="draft">Draft</option>
                                             <option value="underInvestigation">Under Investigation</option>
-                                            <option value="resolved">Resolved</option>
+                                            <option value="resolved" selected="selected">Resolved</option>
                                             <option value="rejected">Rejected</option>
                                         </select>
                                         <noscript>
@@ -343,9 +340,9 @@
                                 <td> 
                                     <form action="/status" method="post">
                                         <select id="selectid" name="selectid" onchange="this.form.submit(); disableOpt();">
-                                            <option value="draft" selected="selected">Draft</option>
+                                            <option value="draft">Draft</option>
                                             <option value="underInvestigation">Under Investigation</option>
-                                            <option value="resolved">Resolved</option>
+                                            <option value="resolved" selected="selected">Resolved</option>
                                             <option value="rejected">Rejected</option>
                                         </select>
                                         <noscript>
@@ -366,9 +363,9 @@
                                 <td> 
                                     <form action="/status" method="post">
                                         <select id="selectid" name="selectid" onchange="this.form.submit(); disableOpt();">
-                                            <option value="draft" selected="selected">Draft</option>
+                                            <option value="draft">Draft</option>
                                             <option value="underInvestigation">Under Investigation</option>
-                                            <option value="resolved">Resolved</option>
+                                            <option value="resolved" selected="selected">Resolved</option>
                                             <option value="rejected">Rejected</option>
                                         </select>
                                         <noscript>
@@ -380,10 +377,10 @@
                         </table>
                     </div>
                 </div>
-                <div id="interventionsDIV">
-                                
+                <div id="interventionsDIV">               
                 </div>
             </div>
         </div>
     </body>
+    <a href="../index.html">Home</a>
 </html>
