@@ -5,7 +5,6 @@ import intervController from "../controllers/intervController";
 import statusController from "../controllers/statusController";
 
 const router = express.Router();
-
 //credentials endpoints
 router.post("/auth/signup", credController.signUp);
 router.post("/auth/signin", credController.signIn);
