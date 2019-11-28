@@ -2,14 +2,14 @@ extends layout
 
 block content
     style
-        include css/userProfile.css
+        include CSS/userProfile.css
     script
-        include js/userProfile.js
+        include JS/userProfile.js
     .container
         .personal
             img.avatar(src="https://paetep.net/wp-content/uploads/user-icon-01.png")
             br
-            
+
             for element in Credentials
                 p #{element.firstname} 
                 p #{element.lastname}
