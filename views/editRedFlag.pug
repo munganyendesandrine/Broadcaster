@@ -1,0 +1,43 @@
+extends layout
+
+block content
+    style
+        include css/editRedFlag.css
+    #flex-container
+        .image
+            h1 #{message}
+            .text
+                div
+                    input#save(type="submit" form = "editRF" value="Save Changes")
+                div
+                    input#cancel(type="button" value="Cancel")
+        .container
+            each element in RedFlags
+                form#editRF(action='/view/editRedflag2/'+ element.id method="post" enctype="")
+                    label
+                        b Red-Flag Title
+                                input#titleRF(type="text" name="title" value=element.title)
+                    br
+                    br
+                    label
+                        b Comment
+                                textarea#descr(name="description" cols="30" rows="5" placeholder="Describe Red-Flag" maxlength="250")=element.comment
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    label
+                        b Red-Flag Image
+                                input#file(type="file"  accept="image/*" name="imageFile" onchange="" value=element.imageFile)
+                    br
+                    br
+                    label
+                        b Red-Flag Video
+                                input#file2(type="file" accept="video/*" name="videoFile" onchange="" value=element.videoFile)
+                    br
+                    br
+                    label
+                        b Location
+                                input#location(type="text" name="location" value=element.location)

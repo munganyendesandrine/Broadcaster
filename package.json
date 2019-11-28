@@ -1,0 +1,38 @@
+{
+  "name": "Broadcaster",
+  "version": "1.0.0",
+  "description": "`\r Broadcaster enables any/every citizen in Africa to bring any form of corruption to the notice of appropriate authorities and the general public. Users can also report on things that need government intervention.\r `",
+  "main": "index.js",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "moment": "^2.24.0",
+    "nodemon": "^1.19.4",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/transpiled/transpiling.js"
+  },
+  "engines": {
+    "node": "10.16.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/munganyendesandrine/Broadcaster.git"
+  },
+  "keywords": [],
+  "author": "Sandrine Munganyende",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/munganyendesandrine/Broadcaster/issues"
+  },
+  "homepage": "https://github.com/munganyendesandrine/Broadcaster#readme"
+}

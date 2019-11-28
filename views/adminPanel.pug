@@ -1,0 +1,93 @@
+extends layout
+
+block content
+    style
+        include css/adminPanel.css
+    script
+        include js/adminPanel.js
+    #header
+        .logo
+            a(href="#") BROADCASTER
+    a.mobile MENU
+    #container
+        .sidebar
+            ul#nav
+                li
+                    span
+                        img(src="https://static.thenounproject.com/png/9484-200.png" width="55" height="55" )
+                    a.selected(href="#") Dashboard
+                li
+                    span
+                        img(src="https://paetep.net/wp-content/uploads/multiple-user-icon-01.png" width="60" height="65" )
+                    a(onclick="usersDIV()") Users
+
+                li
+                    span
+                        img(src="https://icon-library.net/images/red-flag-icon/red-flag-icon-7.jpg" width="60" height="80" )
+                    a(onclick="redflagsDIV()") Red-Flag Records
+                li  
+                    span
+                        br
+                        br
+                        img(src="http://iconsetc.com/icons-watermarks/simple-ios-blue-gradient/iconathon/iconathon_flash-flood-basin/iconathon_flash-flood-basin_simple-ios-blue-gradient_512x512.png" width="60" height="65")
+                    a(onclick="interventionsDIV()") Intervention Records
+
+        .content
+            #usersDIV
+                h1  Users
+                    for element in Credentials
+                        p #{element.firstname}
+            #redflagsDIV
+                h1  Red-flag Records List And Status 
+                .flexible
+                    #box
+                        .box-top Under Investigation
+                        #box-panel1  
+                    #box
+                        .box-top Resolved
+                        #box-panel2
+                    #box
+                        .box-top Rejected
+                        #box-panel3 
+                br
+                #box4
+                    .all All Red-flag Records For All Users
+                    select
+                        option Select user id
+                        for element in Credentials
+                            option #{element.id}
+                    table#dataTable 
+                        tr
+                            //th Checkbox
+                            th RF_ID
+                            th RF_Title
+                            th RF_Description
+                            th RF_Image
+                            th RF_Video
+                            th User Location
+                            th Creation Time
+                            th Status
+                        for element in RedFlags
+                            tr
+                                //td 
+                                    //input(type="checkbox" name="chk")
+                                td #{element.id}
+                                td #{element.title}
+                                td #{element.comment}
+                                td #{element.imageFile}
+                                td #{element.videoFile}
+                                td #{element.location}
+                                td #{element.createdOn}
+                                td 
+                                    
+                                    form(action='/status' method="post")
+                                        select#selectid(name="selectid" onchange="this.form.submit(); disableOpt();")
+                                            option(value="draft" ) Draft
+                                            option(value="underInvestigation") Under Investigation
+                                            option(value="resolved" selected) Resolved
+                                            option(value="rejected") Rejected
+                                        noscript
+                                            input(type='submit' value="Submit")
+                                    
+            #interventionsDIV
+                    

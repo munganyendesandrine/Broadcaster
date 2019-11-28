@@ -1,0 +1,43 @@
+extends layout
+
+block content
+    style
+        include css/deleteRedFlag.css
+    //script
+        //include JS/deleteRedFlag.js
+    //a.delete_rf(href="#", data-id=element.id) Delete
+    each element in RedFlags
+        //a.delete_rf(href="/rf/"+ element.id onclick="deleted()") Delete
+        button(onclick="deleted()" Delete)
+        button(onclick='clickme()')  click
+        script.
+            function clickme() {
+                var a=[]
+                a.push(RedFlags)
+                console.log(a)
+            }
+    #flex-container
+        .image
+            h1 #{message}
+            h3 #{message2}
+        .container
+            h2 #{message3}
+            .text
+                div
+                    input#delete(type="button" value="Yes" )
+                div
+                    input#cancel(type="button" value="No")
+    #myModal.modal
+        .modal-content
+            .modal-header
+                span.close
+                    img(src="images/close2.jpg" width="30" height="30")
+                    h2 #{message4}
+            .modal-body
+                h1
+                    img(src="images/18-512.png" width="70" height="100") 
+                    //"Deletion Succeded!"
+                    p "Red-Flag Record Is Deleted."
+            .modal-footer
+                div
+                    input#check(type="button" value="Check If Deleted")

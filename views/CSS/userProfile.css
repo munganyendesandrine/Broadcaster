@@ -1,0 +1,73 @@
+body{background-color: lightgray;}
+            h1{color:#A60303;text-align:center;}
+
+            .container{
+                background-color: #ECEDEE;
+                padding:40px;
+                width:1200px;
+                border:10px solid rgb(250, 251, 252);
+                margin-right:25px; 
+                margin-left: 25px;
+                justify-content:center;
+                position: fixed;
+            }
+            .avatar{
+                vertical-align: middle;
+                width:50px;
+                height: 50px;
+                border-radius: 50%;
+            }
+            .flexible{
+                display: flex; width: 100%; 
+                justify-content:space-around;
+
+            }
+            div#box {
+                margin-top: 15px; display: flex;
+            }
+            div#box .box-top {
+                color: #fff;
+                text-shadow: 0 1px #000;
+                background: black;
+                padding: 5px;
+                padding-left: 15px;
+                font-weight: 300;
+            } 
+            div#box #box-panel0, div#box #box-panel1, div#box #box-panel2, div#box #box-panel3{
+                padding: 15px;
+                background: #fff;
+                color: #333;
+            }
+            div#box4 .all {
+                color: #fff;
+                text-shadow: 0 1px #000;
+                background: black;
+                padding: 5px;
+                padding-left: 15px;
+                font-weight: 300;
+            }
+
+            #dataTable {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#dataTable td, #dataTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#dataTable tr:nth-child(odd){background-color: #f2f2f2;}
+
+#dataTable tr:nth-child(even){background-color: #595959;}
+
+#dataTable tr:hover {background-color: #ddd;}
+
+#dataTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #A60303;
+  color: white;
+}      

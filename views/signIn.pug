@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    style
+        include css/signIn.css
+    .flex-container
+        .image
+            img(src="https://obuasitoday.com/wp-content/uploads/2019/03/no-to-corruption-696x491.jpg" width="311" height="250")
+            .text
+                a( href="landingPage.html") Sign In With Google
+        .container
+            h1 Sign In Form
+
+            form(action="/auth/signin" method="post")
+                label
+                    b E-mail
+                input(type="text" name="email")
+                br
+                br
+                label
+                    b Password
+                input(type="password" name="pwd")
+                br
+                br
+                input(type="checkbox" name="termsPrivacy")
+                span Keep Me Logged In
+                input#pushbtn(type="submit" value="Login")
+            a(href="/auth/signup") Sign Up

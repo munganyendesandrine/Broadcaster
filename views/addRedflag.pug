@@ -1,0 +1,47 @@
+extends layout
+
+block content
+    style
+        include css/addRedFlag.css
+    script
+        include js/addRedFlag.js
+    #flex-container
+        .image
+            h1 #{message}
+            .text
+                div
+                    input#create(type="submit" form = "createRF" value="Create")
+                div
+                    input#cancel(type="button" value="Cancel")
+        .container
+            form#createRF(action='/view/addRedflag' method="post" enctype="")
+                label
+                    b Red-Flag Title
+                            input#titleRF(type="text" name="title" )
+                br
+                br
+                label
+                    b Comment
+                            textarea#descr(name="comment" cols="30" rows="5"  maxlength="250")
+                br
+                br
+                br
+                br
+                br
+                br
+                label
+                    b Red-Flag Image
+                            input#file(type="file"  accept="image/*" name="imageFile" onchange="")
+                br
+                br
+                label
+                    b Red-Flag Video
+                            input#file2(type="file" accept="video/*" name="videoFile" onchange="")
+                br
+                br
+                label
+                    b Location
+                            input#location(type="text" name="location" 
+                            //button(onclick="getLocation()") Add
+                            //p#demo
+
