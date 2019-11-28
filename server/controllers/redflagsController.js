@@ -20,6 +20,7 @@ class redflagsController {
       comment: req.body.comment
 
     }
+    
     RedFlags.push(redFlag);
 
     const a = [];

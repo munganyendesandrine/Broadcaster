@@ -14,7 +14,4 @@ function interventionsDIV() {
 	document.getElementById("usersDIV").style.display = "none";
 }
 
-function disableOpt(){
-    // document.getElementById("selectid").disabled=true;
-}
 

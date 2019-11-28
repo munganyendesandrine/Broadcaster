@@ -20,20 +20,3 @@ function deleteRow() {
 				// 	alert(e);
 				// }
 			}
-
-  // $('buttons.remove.doc').on('click', function() {
-  //     var userId = $(this).attr('data-id');
-  //     $.ajax({
-  //        method: "POST",
-  //        url: "/red-flags/:id",
-  //        data: {"RedFlags": RedFlags},
-  //        success: function(result) {
-  //           if(/* check if it is ok */) {
-  //               location.reload();
-  //           }
-  //        }
-  //     })
-  //  });
-
-  // script.js
-// console.log('You are awesome');

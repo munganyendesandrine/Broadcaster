@@ -38,6 +38,7 @@ class intervController {
       data: Interventions
     });
   }
+  
   static specificINTV(req, res){
       const specificInterv= Interventions.find(specINTV => specINTV.id === parseInt(req.params.id));
 

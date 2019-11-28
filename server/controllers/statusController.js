@@ -1,7 +1,7 @@
 import Status from "../models/status";
 
 class statusController {
-  
+
   static status(req, res){
     const selectElement = {
       status:req.body.selectid
@@ -10,4 +10,5 @@ class statusController {
     console.log(req.body.selectid);
   }
 }
+
 export default statusController;
