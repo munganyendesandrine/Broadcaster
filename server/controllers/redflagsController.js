@@ -18,7 +18,7 @@ class redflagsController {
       imageFile: req.body.imageFile,
       videoFile: req.body.videoFile,
       comment: req.body.comment
-      
+
     }
     RedFlags.push(redFlag);
 
@@ -45,7 +45,8 @@ class redflagsController {
   static specificRF(req, res){
       const specificRedflag = RedFlags.find(specRF => specRF.id === parseInt(req.params.id));
 
-      if(!specificRedflag) return res.status(404).send("Redflag Record with the given ID was not found");
+      if(!specificRedflag) 
+        return res.status(404).json({ message: "Redflag Record with the given ID was not found"});
     
       return res.status(200).json({
       status:200,
@@ -56,11 +57,11 @@ class redflagsController {
   static editLocation(req, res){
       const place = RedFlags.find(loc => loc.id === parseInt(req.params.id));
 
-      if(!place) return res.status(404).send("Red-flag Record with the given ID was not found");
+      if(!place) return res.status(404).json({ message: "Redflag Record with the given ID was not found"});
 
       // validate, if invalid return 400 Bad Request
       if(!req.body.location)
-        return res.status(400).send('Location required');
+        return res.status(400).json({ message: "Location Required"});
       //Updates
       place.location = req.body.location;
       
@@ -80,9 +81,9 @@ class redflagsController {
   static editComment(req, res){
     const comment = RedFlags.find(description => description.id === parseInt(req.params.id));
 
-    if(!comment) return res.status(404).send("Red-flag Record with the given ID was not found");
+    if(!comment) return res.status(404).json({ message: "Redflag Record with the given ID was not found"});
 
-    if(!req.body.comment) return res.status(400).send('Comment Required');
+    if(!req.body.comment) return res.status(400).json({ message: "Comment Required"});
       
     //Updates
     comment.comment = req.body.comment;
@@ -103,7 +104,7 @@ class redflagsController {
   static deleteRF(req, res){
     const dltRF = RedFlags.find(record => record.id === parseInt(req.params.id));
 
-    if(!dltRF) return res.status(404).send("Red-flag Record with the given ID was not found");
+    if(!dltRF) return res.status(404).json({ message: "Redflag Record with the given ID was not found"});
 
     //Delete
     const index = RedFlags.indexOf(dltRF);
