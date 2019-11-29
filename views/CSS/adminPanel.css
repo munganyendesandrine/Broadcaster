@@ -1,5 +1,4 @@
-
-            * {
+         * {
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
@@ -16,6 +15,14 @@
                 height: 8%;
                 background-color: #0C0C0D; 
                 margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+            }
+            #left{
+                
+                font-size: 20px;
+                padding-top: 5px;
+                margin-right: 5px;
             }
             .logo{
                 float: left;
@@ -43,7 +50,6 @@
             ul#nav li {
                 list-style: none;
                 height:80px;
-                /*background-image: url("../images/success.png");*/
             }
             ul#nav li span{
                 position:relative;
@@ -73,13 +79,11 @@
                 color: #fff;
             }
             ul#nav li a.selected{
-                /*background: #030303;*/
                 color:#fff;
             }
             .content {
                 width: auto;
                 height: 100%;
-                /*background: #95a5a6;*/
                 background: lightgray;
                 margin-left: 250px;
                 padding: 15px;
@@ -152,29 +156,30 @@
                     display: none;
                 }
             }
-#add{float: right; margin-right: 2px;}
-h1{text-align: center;}
-#dataTable {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
+            #add{float: right; margin-right: 2px;}
+            h1{text-align: center;}
+            #dataTable {
+                font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
 
-#dataTable td, #dataTable th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
+            #dataTable td, #dataTable th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
 
-#dataTable tr:nth-child(odd){background-color: #f2f2f2;}
+            #dataTable tr:nth-child(odd){background-color: #f2f2f2;}
 
-#dataTable tr:nth-child(even){background-color: #595959;}
+            #dataTable tr:nth-child(even){background-color: #595959;}
 
-#dataTable tr:hover {background-color: #ddd;}
+            #dataTable tr:hover {background-color: #ddd;}
 
-#dataTable th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: center;
-  background-color: #A60303;
-  color: white;
-}      
+            #dataTable th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: center;
+                background-color: #A60303;
+                color: white;
+            }     
+            

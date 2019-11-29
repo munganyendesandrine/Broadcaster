@@ -1,6 +1,10 @@
 extends layout
 
 block content
+    a(href="/") Home 
+    span |
+    span
+        a(href="/view/profile") Profile
     style
         include CSS/signIn.css
     .flex-container
@@ -12,18 +16,13 @@ block content
             h1 Sign In Form
 
             form(action="/auth/signin" method="post")
-                label
-                    b E-mail
-                input(type="text" name="email")
+                input#mail(type="text" name="email" placeholder="Email")
                 br
                 br
-
-                label
-                    b Password
-                input(type="password" name="pwd")
+                input#pwd(type="password" name="pwd" placeholder="Password")
                 br
                 br
                 input(type="checkbox" name="termsPrivacy")
                 span Keep Me Logged In
                 input#pushbtn(type="submit" value="Login")
-            a(href="/auth/signup") Sign Up
+            a(href="/view/signUp") Sign Up

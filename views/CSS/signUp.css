@@ -1,11 +1,109 @@
-            body{
-                background-color: lightgray;
-            }
+body{background-color: lightgray;}
             h1{color:#A60303;text-align:center;}
             p{justify-content:center;text-align:center;}
             p>a{color:dodgerblue;}
             input{border-radius: 3px; width: 70%}
-            #sbmt {width:335px; background-color:#A60303;color:white;}
+            input#mail{
+                background-image:url('https://cdn4.iconfinder.com/data/icons/aiga-symbol-signs/612/aiga_mail_bg-512.png');
+                background-size: 30px 25px;
+                background-repeat: no-repeat;
+                background-position: 2px;
+                border: 1px solid rgb(250, 251, 252);
+                margin-top:10px;
+                padding-left: 35px;
+                width: 310px;
+                height:30px;
+                font-size: 14px;
+                box-shadow: 0 0 10px;
+            }
+            input#fullname{
+                background-image:url('https://icon-library.net/images/name-icon-png/name-icon-png-8.jpg');
+                background-size: 30px 25px;
+                background-repeat: no-repeat;
+                background-position: 2px;
+                border: 1px solid rgb(250, 251, 252);
+                margin-top:10px;
+                padding-left: 35px;
+                width: 310px;
+                height:30px;
+                font-size: 14px;
+                box-shadow: 0 0 10px;
+            }
+            
+            input#uname{
+                background-image:url('https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/1374525/910/607/m1/fpnw/wm1/02-1user-.jpg?1466144748&s=a1ba841158e98a241637fa285cf25af5');
+                background-size: 45px 25px;
+                background-repeat: no-repeat;
+                background-position: -2px;
+                border: 1px solid rgb(250, 251, 252);
+                margin-top:10px;
+                padding-left: 35px;
+                width: 310px;
+                height:30px;
+                font-size: 14px;
+                box-shadow: 0 0 10px;
+            }
+            input#bio{
+                background-image:url('https://cdn3.iconfinder.com/data/icons/hr-and-recruitment/100/biography_cv_job_recruitment_candidate_hr-512.png');
+                background-size: 30px 25px;
+                background-repeat: no-repeat;
+                background-position: 2px;
+                border: 1px solid rgb(250, 251, 252);
+                margin-top:10px;
+                padding-left: 35px;
+                width: 310px;
+                height:30px;
+                font-size: 14px;
+                box-shadow: 0 0 10px;
+            }
+            input#phone{
+                background-image:url('https://image.flaticon.com/icons/png/512/25/25377.png');
+                background-size: 30px 25px;
+                background-repeat: no-repeat;
+                background-position: 2px;
+                border: 1px solid rgb(250, 251, 252);
+                margin-top:10px;
+                padding-left: 35px;
+                width: 310px;
+                height:30px;
+                font-size: 14px;
+                box-shadow: 0 0 10px;
+            }
+            input#pwd{
+                background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRMU-1--HouvqNJgTAm9lF30rDM3nVcyHFKgpOpy1vy6pnUxTI&s');
+                background-size: 30px 25px;
+                background-repeat: no-repeat;
+                background-position: 2px;
+                border: 1px solid rgb(250, 251, 252);
+                margin-top:10px;
+                padding-left: 35px;
+                width: 310px;
+                height:30px;
+                font-size: 14px;
+                box-shadow: 0 0 10px;
+            }
+            input#cpwd{
+                background-image:url('https://cdn4.iconfinder.com/data/icons/protection-and-security-3/24/_confirm_lock-512.png');
+                background-size: 30px 25px;
+                background-repeat: no-repeat;
+                background-position: 2px;
+                border: 1px solid rgb(250, 251, 252);
+                margin-top:10px;
+                padding-left: 35px;
+                width: 310px;
+                height:30px;
+                font-size: 14px;
+                box-shadow: 0 0 10px;
+            }
+            #sbmt {
+                width:335px; 
+                background-color:#A60303;
+                color:white;
+                border: 1px solid rgb(250, 251, 252);
+                height:35px;
+                font-size: 17px;
+                margin-left: 5px;
+            }
             #chk{width: 5%;}
             input:nth-last-of-type(2){margin-bottom:15px;}
             a:last-of-type{color:dodgerblue;}
@@ -24,4 +122,4 @@
                 width:80px;
                 text-align: right;
             }
-            ::placeholder{text-align: center;};
+            ::placeholder{text-align: left;padding-left: 15px;}
