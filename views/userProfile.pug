@@ -55,6 +55,9 @@ block content
                             - cntD=parseInt(cntD)+parseInt(1)
                     #box-panel3 #{cntD}
             br
+            input#adding(type="button" value="Add Red-flag" onclick="window.location.href='/view/addRedflag'")
+            br
+            br
             #box4
                 .all All  My Red-flag Records 
                 table#dataTable 
@@ -67,7 +70,7 @@ block content
                         th RF_Video
                         th User Location
                         th Creation Time
-                        th Status
+                        th Actions
                     for element in RedFlags
                         tr
                             //td 
@@ -79,4 +82,8 @@ block content
                             td #{element.videoFile}
                             td #{element.location}
                             td #{element.createdOn}
+                            td 
+                                #actions
+                                    img(src="http://icons.iconarchive.com/icons/custom-icon-design/pretty-office-10/128/Pencil-icon.png" height="20" width="30")
+                                    img(src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/128/Actions-edit-delete-icon.png" height="20" width="30")
        

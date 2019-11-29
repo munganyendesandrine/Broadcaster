@@ -2,6 +2,7 @@ body{background-color: lightgray;display: flex;}
             h1{color:#0B010A;text-align:center;justify-content:center;font-size: 45px;}
             h2{text-align:center;}
             input{border-radius: 3px;position: fixed;}
+            #titleRF,#location{width:235px;}
             textarea{position: fixed;}
             p{text-align:center;font-size: 30px;}
             #create,#cancel{
