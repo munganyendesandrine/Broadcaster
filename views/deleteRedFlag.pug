@@ -1,6 +1,8 @@
 extends layout
 
 block content
+    a(href="/") Home 
+    br
 
     style
         include CSS/deleteRedFlag.css
@@ -10,8 +12,8 @@ block content
     //a.delete_rf(href="#", data-id=element.id) Delete
     each element in RedFlags
         //a.delete_rf(href="/rf/"+ element.id onclick="deleted()") Delete
-        button(onclick="deleted()" Delete)
-        button(onclick='clickme()')  click
+        //button(onclick="deleted()" Delete)
+        //button(onclick='clickme()')  click
         script.
             function clickme() {
                 var a=[]
@@ -26,9 +28,9 @@ block content
             h2 #{message3}
             .text
                 div
-                    input#delete(type="button" value="Yes" )
+                    input#delete(type="button" value="Yes" onclick="window.location.href='/red-flags/:id'")
                 div
-                    input#cancel(type="button" value="No")
+                    input#cancel(type="button" value="No" onclick="window.location.href='/view/profile'")
     #myModal.modal
         .modal-content
             .modal-header

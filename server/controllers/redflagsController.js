@@ -155,7 +155,6 @@ class redflagsController {
     RedFlags.push(redFlag);
     console.log("Submitted");
     return;
-    // res.redirect('/');
   }
   //Load Edit Form template
   static specificRF2(req, res){
