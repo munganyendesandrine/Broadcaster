@@ -46,6 +46,9 @@ You would need the following to access the website:
 
 https://github.com/munganyendesandrine/Broadcaster
 
+## Link to Heroku
+
+https://broadcaster-sandrine.herokuapp.com/
 
 ## Contact Information
 
