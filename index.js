@@ -1,9 +1,8 @@
 import express from "express";
 import router from "./server/routes/routes";
+import bodyParser from "body-parser";
 
 const app = express();
-
-const bodyParser = require("body-parser");
 require('./server/prod')(app);
 
 app.use(bodyParser.urlencoded({ extended: true }));

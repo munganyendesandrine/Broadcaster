@@ -1,5 +1,5 @@
 import Credentials from "../models/credentials";
-
+import jwt from "jsonwebtoken";
 
 class credController {
   
@@ -14,14 +14,14 @@ class credController {
       email: req.body.email,
       pwd: req.body.pwd,
       confirmPwd: req.body.confirmPwd,
-      filetoupload: req.body.filetoupload
-      
+      filetoupload: req.body.filetoupload  
     }
     Credentials.push(credential);
+    const token = jwt.sign({credential}, 'generateToken')
     return res.status(201).json({
       status:201,
       message: "User created successfully", 
-      data:credential
+      data:{token:token}
     });
   }
   

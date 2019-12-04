@@ -2,6 +2,7 @@ import RedFlags from "../models/redFlags";
 import Credentials from "../models/credentials";
 import Status from "../models/status";
 import moment from "moment";
+import jwt from "jsonwebtoken";
 
 class redflagsController {
   
@@ -22,9 +23,9 @@ class redflagsController {
     }
     
     RedFlags.push(redFlag);
-
+    const token = jwt.sign({redFlag}, 'generateToken')
     const a = [];
-    const obj={
+    const obj={ 
                 id: redFlag.id,
                 message: "Created redflag record"
               };
@@ -32,7 +33,8 @@ class redflagsController {
 
     return res.status(201).json({
       status:201,
-      data:a
+      //data:a
+      data:{token:token}
     });
   }
 
