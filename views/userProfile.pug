@@ -1,0 +1,89 @@
+extends layout
+
+block content
+    a(href="/") Home 
+    br
+    br
+    style
+        include CSS/userProfile.css
+    script
+        include JS/userProfile.js
+    .container
+        .personal
+            img.avatar(src="https://paetep.net/wp-content/uploads/user-icon-01.png")
+            br
+
+            for element in Credentials
+                p #{element.firstname} 
+                p #{element.lastname}
+                p #{element.bio}
+
+        .redFlags
+            h2 Red Flags Status
+            .flexible
+                #box
+                    .box-top Draft
+                    - let cntA=0
+                    for element in Status
+                        - let t = element.status
+                        if(t =="draft")
+                            - cntA=parseInt(cntA)+parseInt(1)
+                    #box-panel0 #{cntA}
+                #box
+                    .box-top Under Investigation
+                    - let cntB=0
+                    for element in Status
+                        - let t = element.status
+                        if(t =="underInvestigation")
+                            - cntB=parseInt(cntB)+parseInt(1)
+                    #box-panel1 #{cntB}
+                #box
+                    .box-top Resolved
+                    - let cntC=0
+                    for element in Status
+                        - let t = element.status
+                        if(t =="resolved")
+                            - cntC=parseInt(cntC)+parseInt(1)
+                    #box-panel2 #{cntC}
+                    
+                #box
+                    .box-top Rejected
+                    - let cntD=0
+                    for element in Status
+                        - let t = element.status
+                        if(t=="rejected")
+                            - cntD=parseInt(cntD)+parseInt(1)
+                    #box-panel3 #{cntD}
+            br
+            input#adding(type="button" value="Add Red-flag" onclick="window.location.href='/view/addRedflag'")
+            br
+            br
+            #box4
+                .all All  My Red-flag Records 
+                table#dataTable 
+                    tr
+                        //th Checkbox
+                        th RF_ID
+                        th RF_Title
+                        th RF_Description
+                        th RF_Image
+                        th RF_Video
+                        th User Location
+                        th Creation Time
+                        th Actions
+                    for element in RedFlags
+                        tr
+                            //td 
+                                //input(type="checkbox" name="chk")
+                            td #{element.id}
+                            td #{element.title}
+                            td #{element.comment}
+                            td #{element.imageFile}
+                            td #{element.videoFile}
+                            td #{element.location}
+                            td #{element.createdOn}
+                            td 
+                                #actions
+                                    img(src="http://icons.iconarchive.com/icons/custom-icon-design/pretty-office-10/128/Pencil-icon.png" height="20" width="30" onclick="window.location.href='/view/editRedflag/:id'")
+                                    img(src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/128/Actions-edit-delete-icon.png" height="20" width="30" onclick="window.location.href='/view/deleteRedflag/:id'")
+       

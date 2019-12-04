@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-        <title>Broadcaster Register</title>
-        <link rel="shortcut icon" href="https://image.shutterstock.com/image-vector/symbol-sign-stop-corruption-red-260nw-1027946191.jpg" type="image/x-icon"/>
-    </head>
-    
-    <body>
-        <a href="../index.html">Home</a>|
-    <a href="./userProfile.html">Profile</a>
-        <style>    
-            body{background-color: lightgray;}
+body{background-color: lightgray;}
             h1{color:#A60303;text-align:center;}
             p{justify-content:center;text-align:center;}
             p>a{color:dodgerblue;}
@@ -138,25 +123,3 @@
                 text-align: right;
             }
             ::placeholder{text-align: left;padding-left: 15px;}
-        </style>
-        <div class="container">
-            <h1>Sign Up Form</h1>
-            <p>Please Fill In This Form To Create An Account!</p>
-            <hr/>
-            <form action="/auth/signup" method="post" enctype="">
-                <input type="text" placeholder="Full Name" name="firstname" id="fullname"/><br/><br/>
-                <input type="text" placeholder="Username" name="username" id="uname"/><br/><br/>
-                <input type="text" placeholder="Bio" name="bio" id="bio"/><br/><br/>
-                <input type="text" placeholder="Phone Number" name="phone" maxlength="10"id="phone"/><br/><br/>
-                <input type="text" placeholder="Email" name="email" id="mail"/><br/><br/>
-                <input type="password" placeholder="Password" name="pwd" id="pwd" /><br/><br/>
-                <input type="password" placeholder="Confirm Password" name="confirmPwd" id="cpwd" /><br/><br/>
-                <input type="file" placeholder="Profile Image" name="filetoupload" accept="image/*"/><br/><br/>
-                <input id="chk" type="checkbox" name="termsPrivacy"/>
-                <span>I Accept The </span><a href="#">Terms Of Use & Privacy Policy.</a>
-                <input id="sbmt" type="submit" value="Sign Up"/>
-            </form>
-            <p>Already Have An Account?<a href="./signIn.html">Sign In</a></p>
-        </div>
-    </body>    
-</html>

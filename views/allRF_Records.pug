@@ -1,0 +1,38 @@
+extends layout
+
+block content
+
+    style
+        include CSS/allRF_Records.css
+
+    h1 #{message} 
+    a#add(href="/view/addRedflag/") Add Redflag Record
+                        br
+    table#dataTable 
+        tr
+            th Checkbox
+            th RF_ID
+            th RF_Title
+            th RF_Description
+            th RF_Image
+            th RF_Video
+            th User Location
+            th Creation Time
+            th Actions
+        for element in RedFlags
+            tr
+                td 
+                    input(type="checkbox" name="chk")
+                td #{element.id}
+                td #{element.title}
+                td #{element.comment}
+                td #{element.imageFile}
+                td #{element.videoFile}
+                td #{element.location}
+                td #{element.createdOn}
+                td
+                    #actions
+                        //input(type="button" value="Delete" onclick='')
+                        a(href="/view/editRedflag/"+ element.id) Edit
+                        br
+                        a(href="/view/deleteRedflag/"+ element.id) Delete

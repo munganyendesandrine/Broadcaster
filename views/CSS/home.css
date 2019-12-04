@@ -1,16 +1,4 @@
-<!DOCTYPE html  >
-<html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-        <title>Broadcaster Home </title>
-        <link rel="shortcut icon" href="https://image.shutterstock.com/image-vector/symbol-sign-stop-corruption-red-260nw-1027946191.jpg" type="image/x-icon"/>
-    </head>
-    <body>
-        <style> 
-         
-            body {
+body {
                 margin: 0;
                 background-color:lightgray;
                 font-family: Arial, Helvetica, sans-serif;
@@ -75,7 +63,7 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
                 font-size: 18px; 
-                
+                /*height:50px;*/
             }
             .center > h1{
                 margin-top:-300px; font-family: 'Lobster', cursive;
@@ -87,7 +75,7 @@
             p {
                 font-family: "cursive";
                 font-size: 36px;
-                
+                /*line-height: 1.5;*/
             }
             h1{
                 font-size:50px;
@@ -99,7 +87,7 @@
                 background-repeat: no-repeat;
                 background-size:cover;
                 height:560px;
-                
+                /*opacity: 0.5; */
             }
    
            .center {
@@ -134,77 +122,3 @@
             #footer{
                 color:#9E0800;
             }
-        </style>
-        <div class="pic">
-
-            <div id="navbar">
-                <div class="part1">
-                    <a class="home" href="#home">Home</a>
-                    <div class="dropdown1">
-                        <a class="dropbtn1" href="#about">About 
-                            <div class="dropdown-content1">
-                                <a href="#">Broadcaster Mission</a>
-                                <a href="#">Broadcaster Vision</a>
-                                <a href="#">Links To Product</a>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="dropdown2">
-                        <a class="dropbtn2" href="#panels">Panels
-                            <div class="dropdown-content2">
-                                <a href="#">Red-FLag Panel</a>
-                                <a href="#">Intervention Panel</a>
-                                <a href="./UI/adminPanel.html">Admin Panel</a>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="dropdown3">
-                        <a class="dropbtn3" href="#contact">Contacts
-                            <div class="dropdown-content3">
-                                <a href="#">E-mail Address</a>
-                                <a href="#">Phone Number</a>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="part2">
-                    <div class="navButtons">
-                        <a href="./UI/userProfile.html">Profile</a>
-                        <a href="./UI/signIn.html">
-                            <button>Sign In</button>
-                        </a>
-                        <a href="./UI/signUp.html">
-                            <button>Sign Up</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="center">
-                <h1><em>Broadcaster </em></h1>
-                <p>  <strong>Fight Against Corruption Any Where In Africa </strong></p>
-                <p>  <strong>And </strong></p>
-                <p>  <strong>Call For Emergency To Your Government Agency!</strong></p>
-            </div>
-
-        </div>
-        <center>
-            <h1 id="t">Services</h1>
-        </center>
-        <div class="row">
-            <div class="redFlag">
-                <p id="u">Red-Flag Panel</p>
-                <a href="./UI/addRedFlag.html"><img src="https://obuasitoday.com/wp-content/uploads/2019/03/no-to-corruption-696x491.jpg" width="350" height="300"/></a>
-            </div>
-            <div class="Intervention">
-                <p id="v">Intervention Panel</p>
-                <a href="./UI/addIntervention.html"><img src="https://image.freepik.com/free-vector/flood-disaster-design_23-2147708208.jpg" width="350" height="300"/></a>
-            </div>
-        </div>
-        <footer>
-            <a><strong><i> Author: Sandrine MUNGANYENDE</i></strong></a>
-            <a id="footer" href="#top">Top of Page</a>
-            <a><strong><em>Copyright©2019 Broadcaster</em></strong></a>
-        </footer>
-    </body>
-</html>

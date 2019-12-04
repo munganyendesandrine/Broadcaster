@@ -1,0 +1,44 @@
+extends layout
+
+block content
+    a(href="/") Home 
+    span |
+    span
+        a(href="/view/profile") Profile
+    style
+        include CSS/signUp.css
+    .container
+        h1 Sign Up Form
+        p Please Fill In This Form To Create An Account!
+        hr
+        form(action="/auth/signup" method="post" enctype="")
+            input#fullname(type="text" placeholder="Full Name" name="firstname")
+            br
+            br
+            input#uname(type="text" placeholder="Username" name="username" )
+            br
+            br
+            input#bio(type="text" placeholder="Bio" name="bio")
+            br
+            br
+            input#phone(type="text" placeholder="Phone Number" name="phone" maxlength="10")
+            br
+            br
+            input#mail(type="text" placeholder="Email" name="email")
+            br
+            br
+            input#pwd(type="password" placeholder="Password" name="pwd" )
+            br
+            br
+            input#cpwd(type="password" placeholder="Confirm Password" name="confirmPwd")
+            br
+            br
+            input(type="file" placeholder="Profile Image" name="filetoupload" accept="image/*")
+            br
+            br
+            input#chk(type="checkbox" name="termsPrivacy") 
+            span I Accept The 
+            a(href="#") Terms Of Use & Privacy Policy.
+            input#sbmt(type="submit" value="Sign Up")
+        p Already Have An Account?
+            a(href="/view/signIn") Sign In

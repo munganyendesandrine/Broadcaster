@@ -1,0 +1,64 @@
+extends layout
+
+block content
+
+    style
+        include CSS/home.css
+    .pic
+        #navbar
+            .part1
+                a.home(href="#home") Home
+                .dropdown1
+                    a.dropbtn1(href="#about") About 
+                        .dropdown-content1
+                            a(href="#") Broadcaster Mission
+                            a(href="#") Broadcaster Vision
+                            a(href="#") Links To Product              
+                .dropdown2
+                    a.dropbtn2(href="#panels") Panels
+                        .dropdown-content2
+                            a(href="#") Red-FLag Panel
+                            a(href="#") Intervention Panel
+                            a(href="/view/adminPanel") Admin Panel
+                .dropdown3
+                    a.dropbtn3(href="#contact") Contacts
+                        .dropdown-content3
+                            a(href="#") E-mail Address
+                            a(href="#") Phone Number
+            .part2
+                .navButtons
+                    a(href="/view/profile") Profile
+                    a(href="/view/signIn")
+                        button Sign In
+                    a(href="/view/signUp")
+                        button Sign Up
+                    
+        .center
+            h1
+                em #{message} 
+            P   
+                strong Fight Against Corruption Any Where In Africa 
+            p   
+                strong And 
+            p   
+                strong Call For Emergency To Your Government Agency!
+    center
+        h1#t Services
+    .row
+        .redFlag
+            p#u Red-Flag Panel
+            a(href="/view/addRedflag") 
+                img(src="https://obuasitoday.com/wp-content/uploads/2019/03/no-to-corruption-696x491.jpg" width="350" height="300")
+        .Intervention
+            p#v Intervention Panel
+            a(href="UI/addIntervention.html")
+                img(src="https://image.freepik.com/free-vector/flood-disaster-design_23-2147708208.jpg" width="350" height="300")
+
+    footer
+        a
+            strong
+                i   Author: Sandrine MUNGANYENDE      
+        a#footer(href="#top") Top of Page
+        a
+            strong
+                em Copyright©2019 Broadcaster

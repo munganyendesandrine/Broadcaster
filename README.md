@@ -1,6 +1,6 @@
 # Project Name: Broadcaster
 `
-Broadcaster enables any/every citizen in Africa to bring any form of corruption to the notice of appropriate authorities and the general public. Users can also report on things that need government intervention.
+Broadcaster enables any/every citizen in Africa to bring any form of corruption to the notice of appropriate authorities and the general public. Users  can also report on things that need government intervention.
 `
 
 # Author
@@ -46,6 +46,9 @@ You would need the following to access the website:
 
 https://github.com/munganyendesandrine/Broadcaster
 
+## Link to Heroku
+
+https://broadcaster-sandrine.herokuapp.com/
 
 ## Contact Information
 

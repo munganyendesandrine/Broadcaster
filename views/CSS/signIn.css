@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-        <title>Broadcaster Login</title>
-        <link rel="shortcut icon" href="https://image.shutterstock.com/image-vector/symbol-sign-stop-corruption-red-260nw-1027946191.jpg" type="image/x-icon"/>
-    </head>
-    
-    <body>
-        <a href="../index.html">Home</a>|
-        <a href="./userProfile.html">Profile</a>
-        <style>            
-            body{
+body{
                 background-color: lightgray;
             }
             h1{
@@ -99,25 +84,3 @@
                 border:1px solid lightgray;
             }
             #pushbtn{float:right;}
-        </style>
-        <div class="flex-container">
-            <div class="image">
-                <img src="https://obuasitoday.com/wp-content/uploads/2019/03/no-to-corruption-696x491.jpg" width="345" height="330"/>
-                <div class="text">
-                    <a href="landingPage.html">Sign In With Google</a>
-                </div>
-            </div>
-            <div class="container">
-                <h1>Sign In Form</h1>
-                <form action="" method="post">
-                    <input type="text" name="email" placeholder="Email" id="mail"/><br/><br/>
-                    <input type="password" name="pwd" placeholder="Password" id="pwd"/><br/><br/><br/><br/>
-                    <input type="checkbox" name="termsPrivacy"/>
-                    <span>Keep Me Logged In</span>
-                    <input id="pushbtn" type="submit" value="Login"/>
-                </form>
-                <a href="./signUp.html">Sign Up</a>
-            </div>
-        </div>
-    </body>
-</html>
